@@ -1,0 +1,35 @@
+#emittor follower
+import math
+def calculate_vee(a,c,g): 
+   return(a-(c*g))
+def calculate_Ib(a,d,i,e):
+    return (a-d)/(i*(e+1))
+def calculate_ic(e,f):
+    return (e)*(f)
+def calculate_ib(c,e):
+    return (b)*(e)
+def calculate_ie(e,f):
+    return (e+1)*f
+
+if __name__ =="__main__": 
+     a=int(input("Vee=")) 
+     c=float(input ("Ie=")) 
+     d=float(input ("Vbe=")) 
+     e=int(input ("beta=")) 
+     f=float(input ("Ib="))
+     g=float(input("Re="))
+     i=float(input("Rb="))
+     b=float(input("Ic="))
+     
+vee=calculate_vee(a,c,g) 
+print ("Vee=",format(vee)) 
+Ib=calculate_Ib(a,d,i,e)
+print("Ib =",format(Ib))
+ic=calculate_ic(e,f)
+print("Ic=",format(ic))
+ib=calculate_ib(c,g)
+print("Ib=",format(ib))
+ie=calculate_ie(e,f)
+print("Ie=",format(ie))
+
+
