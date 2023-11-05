@@ -1,0 +1,36 @@
+#bjt fixed bias Rb,Rc and Ic,Ib value 
+import math
+def calculate_rc(a,b,c): 
+   return(a-b)/(f*e)
+def calculate_Rc(a,b,c): 
+   return(a-b)/(c)
+def calculate_Rb(a,d,c,e):
+    return (a-d)/(c/e)
+def calculate_rb(a,d,c,e):
+    return (a-d)/(f)
+def calculate_ic(a,b,h): 
+   return(a-b)/(h)
+def calculate_ib(a,d,g):
+    return (a-d)/(g)
+if __name__ =="__main__": 
+     a=int(input("Vcc=")) 
+     b=float(input("vce=")) 
+     c=float(input ("Ic=")) 
+     d=float(input ("Vbe=")) 
+     e=int(input ("beta=")) 
+     f=float(input ("Ib=")) 
+     g=float(input("Rb="))
+     h=float(input("Rc="))
+    
+rc= calculate_rc(a,b,c) 
+print ("Rc is ohms=",format(rc)) 
+Rb=calculate_Rb(a,d,c,e)
+print("Rb is ohms=",format(Rb))
+Rc= calculate_rc(a,b,c) 
+print ("Rc is ohms=",format(Rc)) 
+rb=calculate_Rb(a,d,c,e)
+print("Rb is ohms=",format(rb))
+ic=calculate_ic(a,b,h)  
+print ("Ic =",format(ic)) 
+ib=calculate_ib(a,d,g)
+print("Ib =",format(ib))
