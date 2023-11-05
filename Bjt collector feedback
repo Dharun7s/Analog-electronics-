@@ -1,0 +1,46 @@
+#bjt collector feedback 
+import math
+def calculate_vce(a,c,h,g): 
+   return(a-(c*(h+g)))
+def calculate_ib(a,d,i,e,g,h):
+    return (a-d)/(i+(e*(h+g)))
+def calculate_Ic(e,f):
+    return (e)*(f)
+def calculate_ic(a,b,c,g,h):
+    return (a-b-(c*g))/(h)
+def calculate_rc(a,b,c,g):
+    return (a-b-(c*g))/(c)
+def calculate_rf(a,d,f,e,h,g):
+    return(a-d)/(f+(e*(h+g)))
+def calculate_Beta(c,f):
+    return(c/f)
+def calculate_Ib(c,e):
+    return (c/e)
+
+if __name__ =="__main__": 
+     a=int(input("Vcc=")) 
+     b=float(input("vce=")) 
+     c=float(input ("Ic=")) 
+     d=float(input ("Vbe=")) 
+     e=int(input ("beta=")) 
+     f=float(input ("Ib="))
+     g=float(input("Re="))
+     h=float(input("Rc="))
+     i=float(input("Rf="))
+     
+vce=calculate_vce(a,c,h,g) 
+print ("Vce =",format(vce)) 
+ib=calculate_ib(a,d,i,e,g,h)
+print("Ib =",format(ib))
+ic=calculate_Ic(e,f)
+print("Ic=",format(ic))
+ic=calculate_ic(a,b,c,g,h)
+print("ic=",format(ic))
+rc=calculate_rc(a,b,c,g)
+print("Rc=",format(rc))
+rf=calculate_rf(a,d,f,e,h,g)
+print("Rf=",format(rf))
+Beta=calculate_Beta(c,f)
+print("beta=",format(Beta))
+Ib=calculate_Ib(c,e)
+print("Ib=",format(Ib))
