@@ -1,1 +1,38 @@
-
+print("MOSFET") 
+b=int(input(" 1.fixed bias . 2 voltage divider bias=")) 
+def mosfetdepletion(): 
+         if(b==1): 
+                 print("enter the following values") 
+                 Vgg=float(input("Vgg= ")) 
+                 Idss=float(input("Idss= ")) 
+                 Vp=float(input(" Vp=")) 
+                 Vdd=float(input("Vdd=")) 
+                 Rd=float(input(" Rd= ")) 
+                 Vgs= -Vgg 
+                 Id= (Idss*((1-(Vgs/Vp))*(1-(Vgs/Vp))))*1000 
+                 Vds= Vdd-((Id/1000)*Rd) 
+                 return(" Vgs= ", round(Vgs,4),"volt", 
+                "Id=",round(Id,5),"milliampere", 
+                " Vds=",round(Vds,3),"volt")  
+  
+         elif(b==2): 
+                 print("enter the following values") 
+                 R1=float(input(" R1= ")) 
+                 R2=float(input(" R2= ")) 
+                 Vdd=float(input("Vdd= ")) 
+                 Rs=float(input(" Rs=")) 
+                 Rd=float(input("Rd="))  
+                 Vp=float(input(" Vp=")) 
+                 Idss=float(input(" Idss=")) 
+                 Vgs=float(input(" Vgs= ")) 
+                 Vg= (R2*Vdd/(R1+R2)) 
+  
+                 Id= (Idss*((1-(Vgs/Vp))*(1-(Vgs/Vp))))*1000 
+                 Vds= Vdd-(Id/1000)*(Rd+Rs) 
+                 return(" Vgs=",round(Vgs,4),"volt", 
+                " Id=",round(Id,5),"milliampere", 
+                " Vds=",round(Vds,3),"volt", 
+                " Vg=",round(Vg,3)) 
+         else: 
+                 print("invalid input") 
+print(mosfetdepletion())        
